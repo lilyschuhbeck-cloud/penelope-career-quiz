@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Penelope Network Career Quiz</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="intro" id="intro">
+        <div class="intro-art">
+          <img
+            src="assets/career-quiz-hero.png"
+            alt="A person thoughtfully reviewing career path options at a table"
+          />
+        </div>
+        <div class="intro-copy">
+          <p class="brand-mark">The Penelope Network</p>
+          <p class="eyebrow">Career direction quiz</p>
+          <h1>Find the next role that fits your life now.</h1>
+          <p>
+            Go deeper than personality. This quiz looks at your stage of life, level of
+            experience, industry direction, and the kind of work you want to grow into.
+          </p>
+          <button class="primary-action" id="startQuiz">Start quiz</button>
+        </div>
+      </section>
+
+      <section class="quiz-panel is-hidden" id="quizPanel" aria-live="polite">
+        <header class="quiz-header">
+          <div>
+            <p class="eyebrow" id="stepLabel">Question 1 of 10</p>
+            <h2 id="questionText"></h2>
+          </div>
+          <div class="progress-wrap" aria-label="Quiz progress">
+            <span id="progressBar"></span>
+          </div>
+        </header>
+
+        <div class="options-grid" id="optionsGrid"></div>
+
+        <footer class="quiz-footer">
+          <button class="quiet-action" id="backButton">Back</button>
+          <button class="primary-action" id="nextButton" disabled>Next</button>
+        </footer>
+      </section>
+
+      <section class="results is-hidden" id="resultsPanel">
+        <div class="result-heading">
+          <p class="brand-mark">The Penelope Network</p>
+          <p class="eyebrow">Your career brief</p>
+          <h2 id="resultTitle"></h2>
+          <p id="resultSummary"></p>
+        </div>
+
+        <div class="snapshot-grid">
+          <article class="snapshot-card">
+            <span>Target level</span>
+            <strong id="stageResult"></strong>
+          </article>
+          <article class="snapshot-card">
+            <span>Experience signal</span>
+            <strong id="experienceResult"></strong>
+          </article>
+          <article class="snapshot-card">
+            <span>Industry direction</span>
+            <strong id="industryResult"></strong>
+          </article>
+          <article class="snapshot-card">
+            <span>Salary target</span>
+            <strong id="salaryResult"></strong>
+          </article>
+        </div>
+
+        <div class="result-layout primary-results">
+          <article class="result-card">
+            <h3>3 role lanes to search</h3>
+            <ul id="roleList"></ul>
+          </article>
+          <article class="result-card">
+            <h3>Your next actions</h3>
+            <ul id="actionList"></ul>
+          </article>
+          <article class="result-card">
+            <h3>Industry clarity</h3>
+            <ul id="industryList"></ul>
+          </article>
+        </div>
+
+        <div class="result-layout">
+          <article class="result-card">
+            <h3>What to prioritize</h3>
+            <ul id="priorityList"></ul>
+          </article>
+          <article class="result-card">
+            <h3>Watch-outs</h3>
+            <ul id="watchList"></ul>
+          </article>
+          <article class="result-card">
+            <h3>Search language</h3>
+            <ul id="keywordList"></ul>
+          </article>
+        </div>
+
+        <div class="blend-panel">
+          <h3>Your career blend</h3>
+          <div id="scoreBars"></div>
+          <p class="salary-note">
+            Salary guidance is directional for U.S. roles and should be adjusted for geography,
+            company size, equity, bonus, and sector.
+          </p>
+        </div>
+
+        <div class="action-row">
+          <button class="primary-action" id="retakeButton">Retake quiz</button>
+          <button class="quiet-action" id="printButton">Print results</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
