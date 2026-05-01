@@ -1,6 +1,7 @@
 const archetypes = {
   builder: {
     label: "Builder",
+    avatar: "assets/results/builder.png",
     title: "Builder: make useful things real",
     summary:
       "You are pulled toward ownership, progress, and visible outcomes. Your next role should let you build, improve, operate, or launch work that people can actually use.",
@@ -19,6 +20,7 @@ const archetypes = {
   },
   strategist: {
     label: "Strategist",
+    avatar: "assets/results/strategist.png",
     title: "Strategist: turn complexity into direction",
     summary:
       "You like understanding the bigger picture, finding patterns, and helping people make sharper decisions. Your next role should reward judgment, analysis, and thoughtful influence.",
@@ -37,6 +39,7 @@ const archetypes = {
   },
   helper: {
     label: "Helper",
+    avatar: "assets/results/helper.png",
     title: "Helper: create growth for people",
     summary:
       "You are motivated by human progress. Your next role should put you close to coaching, service, education, community, customers, or employee growth.",
@@ -55,6 +58,7 @@ const archetypes = {
   },
   creator: {
     label: "Creator",
+    avatar: "assets/results/creator.png",
     title: "Creator: shape ideas into expression",
     summary:
       "You want work with taste, originality, storytelling, and room to make something distinctive. Your next role should give you a creative medium and an audience.",
@@ -73,6 +77,7 @@ const archetypes = {
   },
   explorer: {
     label: "Explorer",
+    avatar: "assets/results/explorer.png",
     title: "Explorer: learn, adapt, and open new paths",
     summary:
       "You thrive when you are learning quickly, meeting new contexts, and expanding what is possible. Your next role should include novelty, mobility, and a path toward reinvention.",
@@ -386,6 +391,10 @@ function showResults() {
 
   document.getElementById("resultTitle").textContent = result.title;
   document.getElementById("resultSummary").textContent = `${result.summary} Your second signal is ${archetypes[secondType].label.toLowerCase()}, which means your best-fit roles should combine ${result.label.toLowerCase()} energy with ${archetypes[secondType].label.toLowerCase()} range.`;
+  document.getElementById("resultAvatar").src = result.avatar;
+  document.getElementById("resultAvatar").alt = `${result.label} result avatar`;
+  document.getElementById("avatarDownload").href = result.avatar;
+  document.getElementById("avatarDownload").download = `penelope-network-${topType}-avatar.png`;
   document.getElementById("stageResult").textContent = stage.label;
   document.getElementById("experienceResult").textContent = profile.experience;
   document.getElementById("industryResult").textContent = industry.label;
